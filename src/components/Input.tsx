@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAppDispatch } from "../app/hooks";
-import { addTodoApi } from "../features/todo/TodoSlice";
+import { addSaga, addTodoApi } from "../features/todo/TodoSlice";
 
 interface Props {}
 
@@ -14,7 +14,8 @@ export const Input: React.FC<Props> = () => {
         e.preventDefault();
         if (input !== "") {
           //   dispatch(add_todo(input));
-          dispatch(addTodoApi(input));
+          //   dispatch(addTodoApi(input));
+          dispatch(addSaga(input));
         }
 
         setInput("");
